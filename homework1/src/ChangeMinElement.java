@@ -10,23 +10,23 @@ public class ChangeMinElement {
         System.out.println("\nFind min number of array: " + min);
 
         int total = 0;
-        int min_duplicates_length = 0;
-        for (int position = 0; position < numbers.length; position++) {
-            total += numbers[position];
-            if (numbers[position] == min) {
-                min_duplicates_length += 1;
+        int minDuplicatesLength = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            total += numbers[i];
+            if (numbers[i] == min) {
+                minDuplicatesLength++;
             }
         }
 
         int average = total / numbers.length;
 
-        int min_counter = 1;
-        for (int position = 0; position < numbers.length; position++) {
-            if (min == numbers[position]) {
-                if (min_duplicates_length == min_counter) {
-                    numbers[position] = average;
+        int minCounter = 1;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == min) {
+                if (minDuplicatesLength == minCounter) {
+                    numbers[i] = average;
                 }
-                min_counter += 1;
+                minCounter++;
             }
         }
 
