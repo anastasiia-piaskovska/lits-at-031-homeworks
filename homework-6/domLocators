@@ -1,0 +1,6 @@
+document.getElementById("footer")
+document.getElementsByClassName("content")
+document.getElementsByName("RegistrationUser[ruCityRef]")
+document.getElementsByTagName("p")
+document.querySelector(".form_left_side .form-group")
+document.querySelectorAll(".form_left_side .form-group")
