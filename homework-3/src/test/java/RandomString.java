@@ -4,28 +4,28 @@ import java.util.Random;
 
 public class RandomString {
     public static void main(String[] args) {
+        String randomStringsList = generateRandomString(listFiltered());
+        System.out.println(randomStringsList);
+    }
+
+    static List<String> listFiltered() {
         String[] stringsList = {"Hello World", "Have a great day", "Angel", "Random String", "Word Game"};
-        List<String> filteredStringList = new ArrayList<String>();
+        List<String> filteredStringList = new ArrayList<>();
 
-
-        for(Integer i = 0; i < stringsList.length; i++) {
-            String item = stringsList[i];
-            Integer itemLength = item.length();
+        for (String item : stringsList) {
+            int itemLength = item.length();
 
             if (6 <= itemLength && itemLength <= 15) {
                 filteredStringList.add(item);
             }
         }
-
-        generateRandomString(filteredStringList);
+        return filteredStringList;
     }
 
     static String generateRandomString(List<String> list) {
-        Random randomList = new Random();
-        Integer filteredStringListItem = randomList.nextInt(list.size());
-        String randomElement = list.get(filteredStringListItem);
+        Random random = new Random();
+        int filteredStringListItem = random.nextInt(list.size());
 
-        System.out.println(randomElement);
-        return randomElement;
+        return list.get(filteredStringListItem);
     }
 }
